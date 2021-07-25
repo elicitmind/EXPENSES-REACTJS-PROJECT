@@ -1,5 +1,6 @@
-import Expenses from "./components/Expenses"
-import expensesData from "./components/expensesData"
+import React from 'react'
+import Expenses from "./components/Expenses/Expenses"
+import expensesData from "./components/Expenses/expensesData"
 
 function App() {
 
