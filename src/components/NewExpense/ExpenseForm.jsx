@@ -107,7 +107,7 @@ function ExpenseForm() {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit">Add expense</button>
+        <button type="submit">Add</button>
       </div>
     </form>
   );
