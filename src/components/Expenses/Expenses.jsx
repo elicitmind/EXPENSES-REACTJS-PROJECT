@@ -6,12 +6,30 @@ import ExpensesFilter from "./ExpensesFilter";
 
 function Expenses(props) {
   const [filteredYear, setFilteredYear] = useState("2021");
-  const data = props.items.filter(e=>e.date.getFullYear().toString()===filteredYear)
+  const filteredExpenses = props.items.filter((e) => {
+    return e.date.getFullYear().toString() === filteredYear;
+  });
+
+  // let expensesContent = <p> No expenses found.</p>
+  // if (filteredExpenses.length > 0) {
+  //   expensesContent = filteredExpenses.map((e) => (
+  //     <ExpenseItem
+  //       key={e.id}
+  //       title={e.title}
+  //       amount={e.amount}
+  //       date={e.date}
+  //     />
+  //   ))
+  // }
+
+  
 
   const dropdownChangeHandler = (newFilter) => {
     setFilteredYear(newFilter);
-    console.log(filteredYear);
   };
+
+
+
 
   return (
     <Card className="expenses">
@@ -19,12 +37,18 @@ function Expenses(props) {
         onDropdownChange={dropdownChangeHandler}
         value={filteredYear}
       />
-      {console.log(props.items)}
-      {data.map((e) => (
-        <ExpenseItem key={e.id} title={e.title} amount={e.amount} date={e.date} />
+      {console.log(filteredExpenses)}
+      {filteredExpenses.length === 0 && <p>No expenses found</p>}
+      {filteredExpenses.map((e) => (
+        <ExpenseItem
+          key={e.id}
+          title={e.title}
+          amount={e.amount}
+          date={e.date}
+        />
       ))}
-    </Card>
-  );
-}
+      {/* {expensesContent} */}
+    </Card>)
+  }
 
 export default Expenses;
