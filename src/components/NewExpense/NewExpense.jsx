@@ -3,6 +3,8 @@ import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
 function NewExpense(props) {
+  const [isAppearing, setIsAppearing] = useState(false)
+
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
@@ -13,14 +15,14 @@ function NewExpense(props) {
     props.onAddExpense(expenseData);
   };
 
-  const handleFormAppear = () => {
-    const [isClicked, setIsClicked = useState(false)]
+  const handleFormAppearButton = () => {
+    setIsAppearing(!isAppearing)
   }
 
   return (
     <div className="new-expense">
-      <button onClick={handleFormAppear}>New Expense</button>
-      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+      {!isAppearing && <button onClick={handleFormAppearButton}>New Expense</button>}
+      {isAppearing && <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancelForm={handleFormAppearButton} />}
     </div>
   );
 }

@@ -3,6 +3,7 @@ import Expenses from "./components/Expenses/Expenses";
 import initialExpenses from "./components/Expenses/initialExpenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
+
 function App() {
   const [expensesData, setExpensesData] = useState(initialExpenses)
 
