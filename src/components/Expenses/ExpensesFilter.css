@@ -22,3 +22,7 @@
     font-weight: bold;
     border-radius: 6px;
 }
+
+select {
+    background-color: #f6f9fa;
+}
