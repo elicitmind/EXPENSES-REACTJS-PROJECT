@@ -2,7 +2,7 @@ const initialExpenses = [{
         id: 'e1',
         title: 'Vegetables',
         amount: 24.12,
-        date: new Date(2021, 6, 14),
+        date: new Date(2021, 5, 14),
     },
     {
         id: 'e2',
@@ -21,6 +21,21 @@ const initialExpenses = [{
         title: 'Hardware',
         amount: 450,
         date: new Date(2019, 6, 12),
+    }, {
+        id: 'e5',
+        title: 'Sorcery',
+        amount: 231.88,
+        date: new Date(2019, 15, 5),
+    }, {
+        id: 'e6',
+        title: 'Magick Book',
+        amount: 66,
+        date: new Date(2021, 12, 12),
+    }, {
+        id: 'e7',
+        title: 'Domain',
+        amount: 99,
+        date: new Date(2021, 7, 6),
     },
 ];
 
